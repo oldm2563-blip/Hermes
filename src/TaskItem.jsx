@@ -19,7 +19,7 @@ function TaskItem({ index, task, deleteTask, toggleTask }) {
       </button>
       </div>
       <div>
-        <p>{task.date.toLocaleString()}</p>
+        <p>{new Date(task.date).toLocaleString()}</p>
       </div>
     </div>
 
