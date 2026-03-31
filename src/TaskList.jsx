@@ -20,7 +20,7 @@ function TaskList() {
     if (newTask.trim() !== "") {
       setTasks((t) => [
         ...t,
-        { text: newTask, completed: false, date: new Date() },
+        { id: crypto.randomUUID(), text: newTask, completed: false, date: new Date() },
       ]);
       setNewTask("");
     }
