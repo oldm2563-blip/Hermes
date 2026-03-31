@@ -1,0 +1,51 @@
+.container{
+    width: 100%;
+    margin-top: 100px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.taskContainer{
+    padding: 12px;
+    width: 500px;
+    height: auto;
+    background-color: var(--accent);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+}
+.task{
+    text-decoration: none;
+    background-color: var(--surface);
+    border-radius: var(--border-radius);
+    display: flex;
+    padding: 20px 10px;
+    gap: 10px;
+    flex-direction: column;
+}
+input[type="checkbox"]:checked {
+   accent-color:black
+}
+.active{
+    background-color: black;
+    color: white;
+}
+.form button{
+    border: none;
+    background-color: black;
+    color: white;
+}
+.form{
+    display: flex;
+    gap: 10px;
+}
+.content{
+    display: flex;
+    gap: 10px;
+}
