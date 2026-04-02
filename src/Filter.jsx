@@ -2,10 +2,10 @@ import './Tasks.css'
 
 export default function Filter({filter, setFilter}) {
     return(
-        <div>
-            <button className={filter === 'all' ? 'active' : ''} onClick={() => setFilter("all")}>All</button>
-            <button className={filter === 'active' ? 'active' : ''} onClick={() => setFilter("active")}>Active</button>
-            <button className={filter === 'completed' ? 'active' : ''} onClick={() => setFilter("completed")}>Completed</button>
+        <div className='filter'>
+            <button className='all' onClick={() => setFilter("all")}>All</button>
+            <button className='all' onClick={() => setFilter("active")}>Active</button>
+            <button className='all' onClick={() => setFilter("completed")}>Completed</button>
         </div>
         
     )

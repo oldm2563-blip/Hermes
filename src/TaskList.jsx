@@ -20,7 +20,12 @@ function TaskList() {
     if (newTask.trim() !== "") {
       setTasks((t) => [
         ...t,
-        { id: crypto.randomUUID(), text: newTask, completed: false, date: new Date() },
+        {
+          id: crypto.randomUUID(),
+          text: newTask,
+          completed: false,
+          date: new Date(),
+        },
       ]);
       setNewTask("");
     }
@@ -36,44 +41,47 @@ function TaskList() {
   }
 
   function markAsCompleted(id) {
-
-    setTasks(tasks.map(task => task.id === id ? {...task, completed: !task.completed} :task));
-    
-
-    // const completed = [...filteredTask];
-    // completed[index].completed = !completed[index].completed;
-    // setTasks(completed);
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    );
   }
 
   const filteredTask = tasks.filter((task) => {
-    if (filter === "completed") return task.completed
+    if (filter === "completed") return task.completed;
     if (filter === "active") return !task.completed;
     return true;
   });
 
   return (
     <div className="container">
-      <div className="form">
-        <input
-          type="text"
-          placeholder="Enter a Task...."
-          value={newTask}
-          onChange={input}
-        />
-        <button className="add-button" onClick={addTask}>
-          Add
-        </button>
+      <div className="sys">
+        <div className="form">
+          <input
+            type="text"
+            placeholder="Enter a Task...."
+            value={newTask}
+            onChange={input}
+          />
+          <button className="add-button" onClick={addTask}>
+            Add
+          </button>
+        </div>
+        <div className="fil">
+            <Filter filter={filter} setFilter={setFilter} />
+          </div>
       </div>
-      <Filter filter={filter} setFilter={setFilter} />
+
       <div className="taskContainer">
         {filteredTask.length === 0 ? (
-          <p>No Tasks</p>
+          <p className="noTask">No Tasks</p>
         ) : (
           filteredTask.map((task) => (
             <TaskItem
               index={task.id}
               task={task}
-              deleteTask={() => deleteTask(task.id)} 
+              deleteTask={() => deleteTask(task.id)}
               toggleTask={() => markAsCompleted(task.id)}
             />
           ))

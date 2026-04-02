@@ -12,7 +12,6 @@
     padding: 12px;
     width: 500px;
     height: auto;
-    background-color: var(--accent);
     border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
@@ -22,7 +21,7 @@
 }
 .task{
     text-decoration: none;
-    background-color: var(--surface);
+    background-color: white;
     border-radius: var(--border-radius);
     display: flex;
     padding: 20px 10px;
@@ -32,15 +31,22 @@
 input[type="checkbox"]:checked {
    accent-color:black
 }
-.active{
-    background-color: black;
-    color: white;
-}
+
 .form button{
     border: none;
-    background-color: black;
+    background-color: #03045e;
+    font-weight: bolder;
     color: white;
+    border-radius: 10px;
+    width: 60px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
 }
+
+.form button:hover{
+    box-shadow: 5px 5px var(--highlight);
+}
+
 .form{
     display: flex;
     gap: 10px;
@@ -49,3 +55,74 @@ input[type="checkbox"]:checked {
     display: flex;
     gap: 10px;
 }
+.noTask{
+    font-weight: bolder;
+    text-align: center;
+}
+input[type="text"]{
+    height: 20px;
+    width: 260px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px 10px;
+    outline: none;
+    border: 1px solid var(--highlight);
+} 
+
+.filter{
+    display: flex;
+    gap: 10px;
+}
+.filter button{
+    border-radius: 10px;
+    width: auto;
+    
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    border: none;
+}
+.filter button:hover{
+    box-shadow: 5px 5px var(--highlight);
+}
+.tosk {
+    color: var(--primary);
+}
+.date{
+    color: var(--muted-text);
+}
+
+.Delete-btn{
+    border-radius: var(--border-radius);
+    border: none;
+    font-weight: 500;
+    color: white;
+    background-color: #03045e;
+    cursor: pointer;
+}
+.Delete-btn:hover{
+   background-color: #ff4d4d;
+}
+.all{
+    background-color: #03045e;
+    color: white;
+    font-weight: bolder;
+    padding: 6px 10px;
+}
+.pending{
+    background-color: var(--highlight);
+}
+.complete{
+    background-color: var(--backround);
+}
+.sys{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 160px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0px 76px;
+}
+

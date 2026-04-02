@@ -11,7 +11,7 @@ function TaskItem({ index, task, deleteTask, toggleTask }) {
         checked={task.completed}
         onChange={() => toggleTask(index)}
       />
-      <p style={{ textDecoration: task.completed ? "line-through" : "none" }}>
+      <p className="tosk" style={{ textDecoration: task.completed ? "line-through" : "none" }}>
         {task.text}
       </p>
       <button className="Delete-btn" onClick={() => deleteTask(index)}>
@@ -19,7 +19,7 @@ function TaskItem({ index, task, deleteTask, toggleTask }) {
       </button>
       </div>
       <div>
-        <p>{new Date(task.date).toLocaleString()}</p>
+        <p className="date">{new Date(task.date).toLocaleString()}</p>
       </div>
     </div>
 

@@ -3,19 +3,19 @@
     margin: 0;
 }
 :root{
-    --primary: #342626;          
-    --background: #F7F3EE;      
-    --surface: #FFFFFF;          
-    --accent: #8A9A8A;          
-    --highlight: #C08081;        
-    --text: #2A1F1F;
-    --muted-text: #7A6F6F;
+    --primary: #2E1F0A;          
+    --background: #F2ECE3;      
+    --surface: #FFF8F0;          
+    --accent: #7A8C5A;          
+    --highlight: #0077b6;        
+    --text: #2E1F0A;
+    --muted-text: #9A8570;
     --border-radius: 10px;
     --font: 'Inter', sans-serif;
 }
 body{
   font-family: var(--font);
-  background-color: var(--background);
+  background-color: #90e0ef;
   height: 100vh;
   width: 100%;
 }
