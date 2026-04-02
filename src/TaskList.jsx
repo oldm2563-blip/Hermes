@@ -30,19 +30,23 @@ function TaskList() {
     setItem("tasks", tasks);
   }, [tasks]);
 
-  function deleteTask(index) {
-    const wantedTasks = tasks.filter((element, i) => i !== index);
+  function deleteTask(id) {
+    const wantedTasks = tasks.filter((task) => task.id !== id);
     setTasks(wantedTasks);
   }
 
-  function markAsCompleted(index) {
-    const completed = [...tasks];
-    completed[index].completed = !completed[index].completed;
-    setTasks(completed);
+  function markAsCompleted(id) {
+
+    setTasks(tasks.map(task => task.id === id ? {...task, completed: !task.completed} :task));
+    
+
+    // const completed = [...filteredTask];
+    // completed[index].completed = !completed[index].completed;
+    // setTasks(completed);
   }
 
   const filteredTask = tasks.filter((task) => {
-    if (filter === "completed") return task.completed;
+    if (filter === "completed") return task.completed
     if (filter === "active") return !task.completed;
     return true;
   });
@@ -65,12 +69,12 @@ function TaskList() {
         {filteredTask.length === 0 ? (
           <p>No Tasks</p>
         ) : (
-          filteredTask.map((task, index) => (
+          filteredTask.map((task) => (
             <TaskItem
-              index={index}
+              index={task.id}
               task={task}
-              deleteTask={deleteTask} 
-              toggleTask={markAsCompleted}
+              deleteTask={() => deleteTask(task.id)} 
+              toggleTask={() => markAsCompleted(task.id)}
             />
           ))
         )}
